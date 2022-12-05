@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from .models import Post, Comment
 
-# Create your views here.
+
+class BlogView(ListView):
+    template_name = "blog/blog.html"
+    model = Post.objects.filter(status=True)
+
+
+class SingleView(DetailView):
+    template_name = 
